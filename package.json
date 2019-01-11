@@ -1,0 +1,9 @@
+{
+  "name": "express-api-boilerplate",
+  "version": "1.0.0",
+  "description": "Node + Express API boilerplate",
+  "main": "index.js",
+  "repository": "https://github.com/nath-green/express-api-boilerplate.git",
+  "author": "Nathan Green <hello@nathgreen.co.uk>",
+  "license": "MIT"
+}
