@@ -1,10 +1,24 @@
-const jwt = require('jsonwebtoken');
-const config = require('../../config');
+// ROLES
+// 1 - user authenticated
+// 2 - admin
+// 3 - super
 
-exports.isAuthenticated = (req, res, next) => {
-  const token = req.headers['x-access-token'];
-  return jwt.verify(token, config.secret, (err, decoded) => {
-    if (err || decoded.app !== config.app) return res.status(401).json({ auth: false });
-    return next();
-  });
+exports.hasRole = (role = 1) => (req, res, next) => {
+  if (!req.cookies.session || req.cookies.session.role < role)
+    res.status(401).json({ auth: false });
+  else next();
 };
+
+exports.isAdmin = () => (req, res, next) => {
+  const { username, password } = req.body;
+  if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+    next();
+  } else {
+    res.status(401).json({ auth: false });
+  }
+};
+
+exports.sessionUser = {
+  username: process.env.ADMIN_USERNAME,
+  role: process.env.ADMIN_ROLE
+}
