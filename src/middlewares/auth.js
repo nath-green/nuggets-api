@@ -21,4 +21,4 @@ exports.isAdmin = () => (req, res, next) => {
 exports.sessionUser = {
   username: process.env.ADMIN_USERNAME,
   role: process.env.ADMIN_ROLE
-}
+};
