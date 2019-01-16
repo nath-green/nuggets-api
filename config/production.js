@@ -1,5 +1,7 @@
 module.exports = {
-  port: 3000,
-  secret: process.env.SECRET_KEY_DEV,
+  port: {
+    http: 3000,
+    https: 3000
+  },
   app: process.env.APP
 };
