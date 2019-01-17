@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
 const routes = require('./routes');
+const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app
   .enable('trust proxy') // express-rate-limit, needed if behind a reverse proxy (Heroku, AWS ELB etc)
   .use(rateLimit()) // enable default API limits (5 in 1 minute)
   .use('/api/v1', routes) // define routes with versioned prefix
-  .all('/*', (req, res) => res.status(200).send('Please read the API documentation')); // catch all route
+  .all('/*', (req, res) => res.status(200).send('Please read the API documentation')) // catch all route
+  .use(errorHandler()); // custom middleware to catch all errors
 
 module.exports = app;

@@ -7,11 +7,11 @@
   "author": "Nathan Green <hello@nathgreen.co.uk>",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon ./server/server.js",
+    "dev": "NODE_ENV=development nodemon ./server/server.js",
     "lint": "run-s 'lint:js'",
     "lint:eslint": "eslint --config ./.eslintrc --ext .js",
     "lint:js": "yarn run lint:eslint ./src/* ; exit 0",
-    "start": "node ./server/server.js",
+    "start": "NODE_ENV=productuion node ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {

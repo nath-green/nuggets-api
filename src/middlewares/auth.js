@@ -1,3 +1,5 @@
+const CustomError = require('../lib/custom-error');
+
 // ROLES
 // 1 - user authenticated
 // 2 - admin
@@ -5,7 +7,7 @@
 
 exports.hasRole = (role = 1) => (req, res, next) => {
   if (!req.cookies.session || req.cookies.session.role < role)
-    res.status(401).json({ auth: false });
+    throw new CustomError('Not authorised', 401);
   else next();
 };
 
@@ -14,7 +16,7 @@ exports.isAdmin = () => (req, res, next) => {
   if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
     next();
   } else {
-    res.status(401).json({ auth: false });
+    throw new CustomError('Not authorised', 401);
   }
 };
 
