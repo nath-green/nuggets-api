@@ -13,8 +13,8 @@ const Roster = require('../controllers/roster.controller');
  *     description: It works!
  */
 router.route('/').get(Roster.list);
-// router.route('/').post(Roster.add);
-// router.route('/:id').get(Roster.getById);
+router.route('/').post(Roster.add);
+router.route('/:id').get(Roster.getById);
 router.route('/:id').patch(auth.hasRole(2), Roster.getById);
 router.route('/:id').delete(auth.hasRole(2), Roster.getById);
 

@@ -5,11 +5,26 @@ const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const mongoose = require('mongoose');
 
 const routes = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
+
+mongoose
+  .connect(
+    process.env.dbURL,
+    { useNewUrlParser: true }
+  )
+  .then(
+    () => {
+      console.log('connection successcful');
+    },
+    err => {
+      console.log(err);
+    }
+  );
 
 app
   .use(helmet()) // security middlewares

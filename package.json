@@ -29,6 +29,7 @@
     "express-rate-limit": "^3.3.2",
     "helmet": "^3.15.0",
     "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.6",
     "save": "^2.3.3"
   },
   "devDependencies": {
