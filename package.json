@@ -1,8 +1,8 @@
 {
-  "name": "express-api-boilerplate",
+  "name": "nuggets-api",
   "version": "1.0.0",
-  "description": "Node + Express API boilerplate",
-  "repository": "https://github.com/nath-green/express-api-boilerplate.git",
+  "description": "Denver Nuggets roster API",
+  "repository": "https://github.com/nath-green/nuggets-api.git",
   "license": "MIT",
   "author": "Nathan Green <hello@nathgreen.co.uk>",
   "main": "dist/server.js",
