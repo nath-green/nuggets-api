@@ -5,9 +5,9 @@ exports.list = async (req, res, next) => {
   try {
     data = await Roster.find({});
   } catch (err) {
-    res.status(400).send({ message: 'unsuccessful', data });
+    return res.status(400).send({ data });
   }
-  res.status(200).send({ data });
+  return res.status(200).send({ data });
 };
 
 exports.add = (req, res, next) => {
@@ -16,12 +16,16 @@ exports.add = (req, res, next) => {
       name: req.body.name,
       jersey: req.body.jersey
     },
-    err => {
-      if (err) res.status(400).send({ successful: false });
-      res.status(200).send({ successful: true, data: req.body });
+    (err, player) => {
+      if (err) return res.status(400).send({ success: false });
+      return res.status(200).send({ data: player });
     }
   );
 };
 
-exports.getById = (req, res, next) =>
-  res.status(200).send({ id: req.params.id, message: 'Return data for one ID' });
+exports.getById = (req, res, next) => {
+  Roster.findById(req.params.id, (err, player) => {
+    if (err) return res.status(400).send({ success: false, message: 'That ID does not exist.' });
+    return res.status(200).send({ data: player });
+  });
+};
