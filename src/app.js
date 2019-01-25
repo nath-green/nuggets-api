@@ -19,7 +19,7 @@ mongoose
   )
   .then(
     () => {
-      console.log('connection successcful');
+      console.log('connection successful');
     },
     err => {
       console.log(err);
