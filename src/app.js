@@ -34,7 +34,12 @@ app
   .use(cookieParser()) // parse Cookie header and populate req.cookies
   .use(compression()) // enable gzip compression
   .enable('trust proxy') // express-rate-limit, needed if behind a reverse proxy (Heroku, AWS ELB etc)
-  .use(rateLimit()) // enable default API limits (5 in 1 minute)
+  .use(
+    rateLimit({
+      windowMs: 60 * 60 * 1000, // 1 hour window
+      max: 60 // start blocking after 60 requests
+    })
+  ) // enable default API limits (60 in 1 hour)
   .use('/api/v1', routes) // define routes with versioned prefix
   .all('/*', (req, res) => res.status(200).send('Please read the API documentation')) // catch all route
   .use(errorHandler()); // custom middleware to catch all errors
