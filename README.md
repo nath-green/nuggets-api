@@ -38,11 +38,18 @@
 
 ##### ⭐ `Player` object:
 
-| Key    | Type   |
-| ------ | ------ |
-| \_id   | String |
-| name   | String |
-| jersey | Number |
+| Key        | Type   |
+| ---------- | ------ |
+| \_id       | String |
+| name       | String |
+| jersey     | Number |
+| position   | String |
+| country    | String |
+| yearsPro   | Number |
+| stats      | Object |
+| stats[ppg] | Number |
+| stats[rpg] | Number |
+| stats[apg] | Number |
 
 ##### ✅ Example success response:
 
@@ -52,14 +59,30 @@
 {
   "data": [
     {
-      "_id": "5c4ad79942a9d34d9ed9d28d",
+      "_id": "5c4b2bc6ba80306f63585b56",
       "name": "Jamal Murray",
-      "jersey": 27
+      "jersey": 27,
+      "position": "Guard",
+      "country": "Canada",
+      "yearsPro": 2,
+      "stats": {
+        "ppg": 18.6,
+        "rpg": 4.4,
+        "apg": 4.8
+      }
     },
     {
-      "_id": "5c4ae2b42845dd00048b576e",
+      "_id": "5c4b2cc0d9aa7070048cee12",
       "name": "Nikola Jokic",
-      "jersey": 15
+      "jersey": 15,
+      "position": "Center",
+      "country": "Serbia",
+      "yearsPro": 3,
+      "stats": {
+        "ppg": 19.8,
+        "rpg": 10.3,
+        "apg": 7.7
+      }
     }
   ],
   "success": true,
@@ -102,9 +125,17 @@
 ```json
 {
   "data": {
-    "_id": "5c4ad79942a9d34d9ed9d28d",
+    "_id": "5c4b2bc6ba80306f63585b56",
     "name": "Jamal Murray",
-    "jersey": 27
+    "jersey": 27,
+    "position": "Guard",
+    "country": "Canada",
+    "yearsPro": 2,
+    "stats": {
+      "ppg": 18.6,
+      "rpg": 4.4,
+      "apg": 4.8
+    }
   },
   "success": true,
   "message": "Player returned"
@@ -155,9 +186,17 @@
 ```json
 {
   "data": {
-    "_id": "5c4ad79942a9d34d9ed9d28d",
+    "_id": "5c4b2bc6ba80306f63585b56",
     "name": "Jamal Murray",
-    "jersey": 27
+    "jersey": 27,
+    "position": "Guard",
+    "country": "Canada",
+    "yearsPro": 2,
+    "stats": {
+      "ppg": 18.6,
+      "rpg": 4.4,
+      "apg": 4.8
+    }
   },
   "success": true,
   "message": "Player added to roster"
@@ -207,9 +246,17 @@
 ```json
 {
   "data": {
-    "_id": "5c4ad79942a9d34d9ed9d28d",
+    "_id": "5c4b2bc6ba80306f63585b56",
     "name": "Jamal Murray",
-    "jersey": 15
+    "jersey": 15,
+    "position": "Guard",
+    "country": "Canada",
+    "yearsPro": 2,
+    "stats": {
+      "ppg": 18.6,
+      "rpg": 4.4,
+      "apg": 4.8
+    }
   },
   "success": true,
   "message": "Player updated"
@@ -251,9 +298,17 @@
 ```json
 {
   "data": {
-    "_id": "5c4ad79942a9d34d9ed9d28d",
+    "_id": "5c4b2bc6ba80306f63585b56",
     "name": "Jamal Murray",
-    "jersey": 27
+    "jersey": 27,
+    "position": "Guard",
+    "country": "Canada",
+    "yearsPro": 2,
+    "stats": {
+      "ppg": 18.6,
+      "rpg": 4.4,
+      "apg": 4.8
+    }
   },
   "sucess": true,
   "message": "Player deleted from roster"
