@@ -2,29 +2,56 @@
 
 🏀 A simple RESTful API for the Denver Nuggets NBA team.
 
-The current version of the API lives at `https://path.to.api/v1/api`
+📑 The current version of the API lives at `https://path.to.api/v1/api`
 
-## `nuggets` resource
+⚡ API last updated on: `DD/MM/YYYY`
 
-URL: `https://path.to.api/v1/api/nuggets`
+-----
 
-### Endpoints quick glance:
+### *nuggets* resource
 
- `[GET]` /roster
- `[GET]` /roster/{playerID}
- `[POST]` /roster
+📥  `https://path.to.api/v1/api/nuggets`
 
-### Endpoints in depth
+#### Status codes
 
-#### `[GET]` List all players in Nuggets roster
+All endpoints will return the same status codes upon success or error:
 
-Endpoint: `https://path.to.api/v1/api/nuggets`
+|Response|Code|
+|---|---|
+|Success|200|
+|Error|400|
 
-Response: X
+-----
+
+#### Endpoints quick glance
+
+|#|Method|Endpoint|Description|
+|---|---|---|---|
+|1|`[GET]`|https://path.to.api/v1/api/nuggets/roster|Retrieve a list of all players|
+|2|`[GET]`|https://path.to.api/v1/api/nuggets/roster/{playerID}|Retrieve one player|
+|3|`[POST]`|https://path.to.api/v1/api/nuggets/roster|Add new player to roster|
+
+-----
+
+#### Endpoints in depth
+
+#### #1 - `[GET]` Retrieve a list of all players
+
+📥 https://path.to.api/v1/api/nuggets
+
+> List all players in Nuggets roster. Returns an array of data with multiple player objects.
+
+##### Endpoint response:
+
+|Key|Type|
+|---|---|
+|data|Array (of player objects)|
+
+##### Example response:
 
 ```json
 {
-  data: [
+  "data": [
     {
       name: "Jamal Murray",
       jersey: 27
@@ -37,3 +64,5 @@ Response: X
   ]
 }
 ```
+
+-----
