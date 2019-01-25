@@ -25,11 +25,13 @@ All endpoints will return the same status codes upon success or error:
 
 #### Endpoints quick glance
 
-|#|Method|Endpoint|Description|
-|---|---|---|---|
-|1|`[GET]`|https://path.to.api/v1/api/nuggets/roster|Retrieve a list of all players|
-|2|`[GET]`|https://path.to.api/v1/api/nuggets/roster/{playerID}|Retrieve one player|
-|3|`[POST]`|https://path.to.api/v1/api/nuggets/roster|Add new player to roster|
+|#|Method|Endpoint|Description|Access|
+|---|---|---|---|---|
+|1|`[GET]`|https://path.to.api/v1/api/nuggets/roster|Retrieve a list of all players|✅|
+|2|`[GET]`|https://path.to.api/v1/api/nuggets/roster/{playerID}|Retrieve one player|✅|
+|3|`[POST]`|https://path.to.api/v1/api/nuggets/roster|Add new player to roster|🔐|
+|4|`[PATCH]`|https://path.to.api/v1/api/nuggets/roster/{playerID}|Amend one player|🔐|
+|5|`[DELETE]`|https://path.to.api/v1/api/nuggets/roster/{playerID}|Delete player from roster|🔐|
 
 -----
 
