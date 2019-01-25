@@ -31,16 +31,11 @@ exports.getById = (req, res, next) => {
 };
 
 exports.updateById = (req, res, next) => {
-  Roster.findByIdAndUpdate(
-    req.params.id,
-    { $set: { name: req.body.name, jersey: req.body.jersey } },
-    { new: true },
-    (err, player) => {
-      if (err || player === null)
-        return res.status(400).send({ success: false, message: 'That ID does not exist.' });
-      return res.status(200).send({ sucess: true, message: 'Player updated', data: player });
-    }
-  );
+  Roster.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true }, (err, player) => {
+    if (err || player === null)
+      return res.status(400).send({ success: false, message: 'That ID does not exist.' });
+    return res.status(200).send({ sucess: true, message: 'Player updated', data: player });
+  });
 };
 
 exports.deleteById = (req, res, next) => {
