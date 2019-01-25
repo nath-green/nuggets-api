@@ -12,13 +12,13 @@
 
 📥 `https://nuggets-api.herokuapp.com/api/v1/roster`
 
-| #                                          | Method     | Endpoint       | Description                    | Access |
-| ------------------------------------------ | ---------- | -------------- | ------------------------------ | ------ |
-| [1](#1-get-retrieve-a-list-of-all-players) | `[GET]`    | /roster        | Retrieve a list of all players | ✅     |
-| [2](#2-get-retrieve-one-player)            | `[GET]`    | /roster/{\_id} | Retrieve one player            | ✅     |
-| [3](#3-post-add-a-new-player)              | `[POST]`   | /roster        | Add new player to roster       | 🔐     |
-| [4](#4-patch-amend-one-player)             | `[PATCH]`  | /roster/{\_id} | Amend one player               | 🔐     |
-| [5](#5-delete-delete-player-from-roster)   | `[DELETE]` | /roster/{\_id} | Delete player from roster      | 🔐     |
+| #                                            | Method     | Endpoint       | Description                    | Access |
+| -------------------------------------------- | ---------- | -------------- | ------------------------------ | ------ |
+| [1](#1---get-retrieve-a-list-of-all-players) | `[GET]`    | /roster        | Retrieve a list of all players | ✅     |
+| [2](#2---get-retrieve-one-player)            | `[GET]`    | /roster/{\_id} | Retrieve one player            | ✅     |
+| [3](#3---post-add-a-new-player)              | `[POST]`   | /roster        | Add new player to roster       | 🔐     |
+| [4](#4---patch-amend-one-player)             | `[PATCH]`  | /roster/{\_id} | Amend one player               | 🔐     |
+| [5](#5---delete-delete-player-from-roster)   | `[DELETE]` | /roster/{\_id} | Delete player from roster      | 🔐     |
 
 ---
 
@@ -32,7 +32,7 @@
 
 | Key     | Type                                           |
 | ------- | ---------------------------------------------- |
-| data    | Array (of [`Player`](#player-object-) objects) |
+| data    | Array (of [`Player`](#-player-object) objects) |
 | success | Boolean                                        |
 | message | String                                         |
 
@@ -91,7 +91,7 @@
 
 | Key     | Type                                          |
 | ------- | --------------------------------------------- |
-| data    | Object ([see Player object](#player-object-)) |
+| data    | Object ([see Player object](#-player-object)) |
 | success | Boolean                                       |
 | message | String                                        |
 
@@ -144,7 +144,7 @@
 
 | Key     | Type                                          |
 | ------- | --------------------------------------------- |
-| data    | Object ([see Player object](#player-object-)) |
+| data    | Object ([see Player object](#-player-object)) |
 | success | Boolean                                       |
 | message | String                                        |
 
@@ -196,7 +196,7 @@
 
 | Key     | Type                                          |
 | ------- | --------------------------------------------- |
-| data    | Object ([see Player object](#player-object-)) |
+| data    | Object ([see Player object](#-player-object)) |
 | success | Boolean                                       |
 | message | String                                        |
 
@@ -240,7 +240,7 @@
 
 | Key     | Type                                          |
 | ------- | --------------------------------------------- |
-| data    | Object ([see Player object](#player-object-)) |
+| data    | Object ([see Player object](#-player-object)) |
 | success | Boolean                                       |
 | message | String                                        |
 
@@ -271,5 +271,3 @@
   "message": "Player cannot be removed or does not exist"
 }
 ```
-
----
